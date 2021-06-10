@@ -74,16 +74,6 @@ function deleteUsuario(req,res) {
 	let estado={estado:false}
 	// ELiminar el suario fisicamente
 
-	// Usuario.findByIdAndDelete(id,(err,UsuarioDB)=>{
-	// 	if(err){
-	// 		return res.status(400).json({ok:false,err})
-	// 	}
-	// 	if(!UsuarioDB) res.status(400).json({ok:false,err:'Usuario ya estaba eliminado'})
-
-	// 	res.json({
-	// 		UsuarioDB
-	// 	})
-	// })
 
 	Usuario.findByIdAndUpdate(id,estado,{new:true},(err,UsuarioDB)=>{
 		if (err) return res.status(400).json({ok:false,err})
