@@ -16,7 +16,7 @@ app.use(require("./routes/usuarios"));
 
 async function base() {
 	const respuesta = await mongoose.connect(
-		"mongodb://127.0.0.1:27017/cafe",
+		process.env.URLDB,
 		{
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
