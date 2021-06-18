@@ -35,7 +35,6 @@ function getUsario(req, res) {
             err,
           });
         }
-
         res.json({
           ok: true,
           usuarioDB,
@@ -95,7 +94,7 @@ function deleteUsuario(req, res) {
   Usuario.findByIdAndUpdate(id, estado, { new: true }, (err, UsuarioDB) => {
     if (err) return res.status(400).json({ ok: false, err });
 
-    res.json({ ok: true, UsuarioDB });
+    return res.json({ ok: true, UsuarioDB });
   });
 }
 
